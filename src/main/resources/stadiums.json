@@ -1,0 +1,19 @@
+{
+  "Arlington": { "lat": 32.7480, "lon": -97.0928, "city": "Dallas/Arlington" },
+  "Atlanta": { "lat": 33.7554, "lon": -84.4009, "city": "Atlanta" },
+  "Boston": { "lat": 42.0909, "lon": -71.2643, "city": "Boston" },
+  "Dallas": { "lat": 32.7480, "lon": -97.0928, "city": "Dallas" },
+  "Guadalajara (Zapopan)": { "lat": 20.6892, "lon": -103.4673, "city": "Guadalajara" },
+  "Houston": { "lat": 29.6847, "lon": -95.4107, "city": "Houston" },
+  "Kansas City": { "lat": 39.0489, "lon": -94.4839, "city": "Kansas City" },
+  "Los Angeles": { "lat": 33.9534, "lon": -118.3392, "city": "Los Angeles" },
+  "Mexico City": { "lat": 19.3029, "lon": -99.1505, "city": "Mexico City" },
+  "Miami": { "lat": 25.9580, "lon": -80.2389, "city": "Miami" },
+  "Monterrey": { "lat": 25.6693, "lon": -100.3105, "city": "Monterrey" },
+  "New York": { "lat": 40.8136, "lon": -74.0744, "city": "New York" },
+  "Philadelphia": { "lat": 39.9008, "lon": -75.1674, "city": "Philadelphia" },
+  "San Francisco": { "lat": 37.4033, "lon": -121.9694, "city": "San Francisco" },
+  "Seattle": { "lat": 47.5952, "lon": -122.3316, "city": "Seattle" },
+  "Toronto": { "lat": 43.6333, "lon": -79.4189, "city": "Toronto" },
+  "Vancouver": { "lat": 49.2767, "lon": -123.1116, "city": "Vancouver" }
+}
