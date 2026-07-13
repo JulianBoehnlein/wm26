@@ -1,0 +1,3 @@
+- Korrektheit der Daten
+- Konsistenz der Daten
+- Gleichheit der Daten

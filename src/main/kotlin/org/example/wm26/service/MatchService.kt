@@ -8,41 +8,13 @@ import org.example.wm26.producer.MatchResultProducer
 import org.example.wm26.repository.MatchRepository
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import tools.jackson.databind.ObjectMapper
 
-//@Service
-//class MatchService(
-//    private val openLigaClient: OpenLigaClient,
-//    private val matchRepository: MatchRepository,
-//    private val matchResultProducer: MatchResultProducer,
-//    private val objectMapper: ObjectMapper
-//) {
-//    private val log = LoggerFactory.getLogger(MatchService::class.java)
-//
-//    fun syncMatches() {
-//        val matches: List<Match>? = openLigaClient.fetchOpenLigaData()
-//
-//        matches?.forEach { match ->
-//            if (matchRepository.existsByMatchId(match.matchID)) {
-//                log.info("Match ${match.matchID} already exists, skipping")
-//                return@forEach
-//            }
-//
-//            matchRepository.save(MatchDocument(matchId = match.matchID))
-//            log.info("Match ${match.matchID} saved to MongoDB")
-//
-//            val payload = objectMapper.writeValueAsString(match)
-//            matchResultProducer.publish(match.matchID.toString(), payload)
-//            log.info("Match ${match.matchID} published to Kafka")
-//        }
-//    }
 
 @Service
 class MatchService(
     private val openLigaClient: OpenLigaClient,
     private val matchRepository: MatchRepository,
     private val matchResultProducer: MatchResultProducer,
-    private val objectMapper: ObjectMapper,
     private val weatherClient: WeatherClient,
     private val stadiumCoordinateService: StadiumCoordinateService
 ) {
@@ -79,8 +51,7 @@ class MatchService(
             )
             log.info("Match ${match.matchID} saved to MongoDB")
 
-            val payload = objectMapper.writeValueAsString(match)
-            matchResultProducer.publish(match.matchID.toString(), payload)
+            matchResultProducer.publish(match.matchID.toString(), match)
             log.info("Match ${match.matchID} published to Kafka")
         }
     }

@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.web.client.RestClient
 import org.springframework.web.client.body
-import tools.jackson.databind.JsonNode
-import tools.jackson.databind.ObjectMapper
 
 @Service
 class OpenLigaClient {
@@ -15,9 +13,6 @@ class OpenLigaClient {
 
     @Autowired
     private lateinit var producer: MatchResultProducer
-
-    @Autowired
-    private lateinit var objectMapper: ObjectMapper
 
     fun fetchOpenLigaData(): List<Match>? {
         return restClient

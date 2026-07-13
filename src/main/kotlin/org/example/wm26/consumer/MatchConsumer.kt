@@ -12,10 +12,10 @@ import java.util.logging.Logger
     groupId = "wm26-consumer-group",
 )
 @Component
-class MatchListener(
+class MatchConsumer(
     val matchRawService: MatchRawService,
 ) {
-    private val log = Logger.getLogger(MatchListener::class.java.name)
+    private val log = Logger.getLogger(MatchConsumer::class.java.name)
 
     @KafkaHandler
     fun consume(message: Match) {

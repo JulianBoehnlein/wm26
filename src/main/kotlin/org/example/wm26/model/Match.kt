@@ -1,5 +1,7 @@
 package org.example.wm26.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
+
 data class Match(
     val matchID: Int,
     val matchDateTime: String,
@@ -42,9 +44,9 @@ data class Goal(
     val goalGetterID: Int?,
     val goalGetterName: String?,
     val scoringTeamId: Int?,
-    val isPenalty: Boolean,
-    val isOwnGoal: Boolean,
-    val isOvertime: Boolean
+    @JsonProperty("isPenalty") val isPenalty: Boolean?,
+    @JsonProperty("isOwnGoal") val isOwnGoal: Boolean?,
+    @JsonProperty("isOvertime") val isOvertime: Boolean?
 )
 
 data class Location(
