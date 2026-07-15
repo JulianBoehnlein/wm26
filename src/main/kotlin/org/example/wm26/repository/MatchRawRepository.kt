@@ -6,4 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository
 
 interface MatchRawRepository : MongoRepository<MatchRawDocument, ObjectId> {
     fun existsByMatchId(matchId: Int): Boolean
+    fun findByMatchId(matchId: Int): MatchRawDocument?
 }

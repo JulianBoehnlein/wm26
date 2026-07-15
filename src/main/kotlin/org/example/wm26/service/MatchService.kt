@@ -7,6 +7,7 @@ import org.example.wm26.model.MatchWeather
 import org.example.wm26.producer.MatchResultProducer
 import org.example.wm26.repository.MatchRepository
 import org.slf4j.LoggerFactory
+import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 
 
@@ -19,6 +20,12 @@ class MatchService(
     private val stadiumCoordinateService: StadiumCoordinateService
 ) {
     private val log = LoggerFactory.getLogger(MatchService::class.java)
+
+    @Scheduled(fixedRate = 1_800_000)
+    fun scheduledSync() {
+        log.info("Scheduling WM26")
+        syncMatches()
+    }
 
     fun syncMatches() {
         val matches = openLigaClient.fetchOpenLigaData()

@@ -22,4 +22,24 @@ class MatchRawService(
         matchRawRepository.save(MatchRawDocument(matchId = match.matchID, match = match))
         log.info("MatchRaw ${match.matchID} saved in MongoDB")
     }
+
+    fun getMatches(): List<Match> {
+        val result = matchRawRepository.findAll()
+
+        if (result.isNotEmpty()) {
+            return result.map { it.match }
+        }
+
+        return emptyList()
+    }
+
+    fun getMatch(id: Int): Match? {
+        val result = matchRawRepository.findByMatchId(id)
+
+        if(result != null) {
+            return result.match
+        }
+
+        return null
+    }
 }
