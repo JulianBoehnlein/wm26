@@ -35,7 +35,11 @@ class AnalyticsService(
             (halfTimeLeadWins.toDouble() / halfTimeLeads * 100).round()
         else 0.0,
         goalsPerMinuteBlock = goalsPerMinuteBlock,
-        ownGoals = ownGoals
+        ownGoals = ownGoals,
+        comebacks = comebacks,
+        trailingAtHalftime = trailingAtHalfTime,
+        halfTimeLeads = halfTimeLeads,
+        halfTimeLeadWins = halfTimeLeadWins
     )
 
     fun getTemperatureGoalAnalysis(): List<TemperatureGoalAnalysis> {
